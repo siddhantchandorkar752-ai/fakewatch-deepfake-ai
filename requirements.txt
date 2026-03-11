@@ -1,0 +1,17 @@
+﻿torch
+torchvision
+torchaudio
+opencv-python
+ultralytics
+timm
+scikit-learn
+pyyaml
+fastapi
+uvicorn
+gradio
+numpy
+pandas
+python-multipart
+onnx
+onnxruntime
+python-dotenv

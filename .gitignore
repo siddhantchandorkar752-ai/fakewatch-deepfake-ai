@@ -1,0 +1,37 @@
+﻿# Datasets
+datasets/
+data/
+
+# Model weights
+*.pt
+*.pth
+*.onnx
+*.pkl
+checkpoints/
+weights/
+
+# Logs
+logs/
+*.log
+
+# Cache
+__pycache__/
+*.pyc
+.cache/
+*.egg-info/
+
+# Videos
+*.mp4
+*.avi
+*.mov
+
+# Environment
+venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
