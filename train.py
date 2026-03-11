@@ -27,18 +27,18 @@ def main():
     logger.info(f"Device: {device}")
 
     train_loader = get_dataloader(
-        root_dir=config["data"]["root"],
+        root_dir="datasets/celebdf",
         split="train",
-        batch_size=config["data"]["batch_size"],
-        num_workers=config["data"]["num_workers"],
+        batch_size=8,
+        num_workers=0,
         num_frames=config["data"]["num_frames"],
         image_size=config["data"]["image_size"],
     )
     val_loader = get_dataloader(
-        root_dir=config["data"]["root"],
+        root_dir="datasets/celebdf",
         split="val",
-        batch_size=config["data"]["batch_size"],
-        num_workers=config["data"]["num_workers"],
+        batch_size=8,
+        num_workers=0,
         num_frames=config["data"]["num_frames"],
         image_size=config["data"]["image_size"],
     )

@@ -13,11 +13,11 @@ class FusionModule(nn.Module):
         super(FusionModule, self).__init__()
         self.fusion = nn.Sequential(
             nn.Linear(spatial_dim + temporal_dim, hidden_dim * 2),
-            nn.BatchNorm1d(hidden_dim * 2),
+            nn.LayerNorm(hidden_dim * 2),
             nn.ReLU(),
             nn.Dropout(p=dropout),
             nn.Linear(hidden_dim * 2, hidden_dim),
-            nn.BatchNorm1d(hidden_dim),
+            nn.LayerNorm(hidden_dim),
             nn.ReLU(),
             nn.Dropout(p=dropout),
         )
@@ -28,7 +28,6 @@ class FusionModule(nn.Module):
         spatial_features: torch.Tensor,
         temporal_features: torch.Tensor
     ) -> torch.Tensor:
-        # spatial_features: (batch, frames, spatial_dim) -> mean pool
         spatial_pooled = spatial_features.mean(dim=1)
         combined = torch.cat([spatial_pooled, temporal_features], dim=1)
         fused = self.fusion(combined)
